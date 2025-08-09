@@ -2,6 +2,7 @@ import type { SanityDocument } from "@sanity/client";
 import { client } from "~/sanity/client";
 import type { Route } from "./+types/home";
 
+
 // Import components
 import Header from "~/components/layout/Header";
 import Hero from "~/components/sections/Hero";
