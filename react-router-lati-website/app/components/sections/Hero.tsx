@@ -11,7 +11,9 @@ const cube = createRoundedCube();
 
 export default function Hero() {
   return (
-    <section className="min-h-screen relative isolate overflow-hidden bg-gradient-to-br from-white via-blue-50/50 to-blue-400/40">
+    <section className="min-h-screen relative isolate overflow-hidden bg-white">
+      {/* Gradiente celeste en esquina superior derecha */}
+      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-sky-300/60 via-sky-200/40 via-sky-100/20 to-white"></div>
       
       {/* Canvas envuelto en contenedor absoluto */}
       <div className="absolute inset-0 z-100">
@@ -30,10 +32,10 @@ export default function Hero() {
           <ThreeObject
             geometry={cube}
             position={[3, 0, 2]}
-            rotation={[-0.4,0,0]}
+            rotation={[-0.4, 0, 0]}
             color={CENFOTEC_BLUE}
             animations={['bobbing', 'spin']}
-            scale={2}
+            scale={[2, 2, 2]}
           />
           <ThreeObject
             geometry={icosahedron}
@@ -57,7 +59,7 @@ export default function Hero() {
             color={CENFOTEC_BLUE}
             animations={['bobbing', 'rotate']}
             wireframe
-            scale={0.2}
+            scale={[0.2, 0.2, 0.2]}
           />
 
           <ThreeObject
@@ -66,7 +68,7 @@ export default function Hero() {
             rotation={[-0.5, 0, -5]}
             color={CENFOTEC_BLUE}
             animations={['bobbing', 'rotate']}
-            scale={0.2}
+            scale={[0.2, 0.2, 0.2]}
           />
 
           <ThreeObject
@@ -75,7 +77,7 @@ export default function Hero() {
             rotation={[-0.5, 0, 0]}
             color={CENFOTEC_BLUE}
             animations={['bobbing', 'rotate']}
-            scale={0.1}
+            scale={[0.1, 0.1, 0.1]}
           />
           {/*<ThreeObject
             geometry={createClosedHalfSphere()}
@@ -97,12 +99,22 @@ export default function Hero() {
       </div>
 
       {/* Líneas del fondo: detrás del canvas */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
-        <div className="absolute top-20 left-10 w-32 h-1 bg-blue-500 transform rotate-45"></div>
-        <div className="absolute top-40 right-20 w-24 h-1 bg-blue-600 transform -rotate-30"></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-1 bg-blue-400 transform rotate-12"></div>
-        <div className="absolute top-1/2 right-1/3 w-20 h-1 bg-blue-500 transform -rotate-45"></div>
-        <div className="absolute bottom-20 right-1/4 w-36 h-1 bg-blue-600 transform rotate-60"></div>
+      <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
+        <div className="absolute top-20 left-10 w-32 h-1 bg-blue-700 transform rotate-45"></div>
+        <div className="absolute top-40 right-20 w-24 h-1 bg-blue-800 transform -rotate-30"></div>
+        <div className="absolute bottom-32 left-1/4 w-40 h-1 bg-blue-700 transform rotate-12"></div>
+        <div className="absolute top-1/2 right-1/3 w-20 h-1 bg-blue-800 transform -rotate-45"></div>
+        <div className="absolute bottom-20 right-1/4 w-36 h-1 bg-blue-700 transform rotate-60"></div>
+        
+        {/* Líneas adicionales azules */}
+        <div className="absolute top-16 right-32 w-28 h-1 bg-blue-800 transform rotate-60"></div>
+        <div className="absolute top-24 left-1/3 w-36 h-1 bg-blue-700 transform -rotate-15"></div>
+        <div className="absolute top-60 right-16 w-20 h-1 bg-blue-800 transform rotate-75"></div>
+        <div className="absolute top-80 left-16 w-44 h-1 bg-blue-700 transform -rotate-20"></div>
+        <div className="absolute top-1/3 right-1/4 w-32 h-1 bg-blue-800 transform rotate-30"></div>
+        <div className="absolute bottom-40 right-32 w-24 h-1 bg-blue-700 transform -rotate-50"></div>
+        <div className="absolute bottom-16 left-1/3 w-40 h-1 bg-blue-800 transform rotate-25"></div>
+        <div className="absolute top-2/3 right-1/2 w-28 h-1 bg-blue-700 transform -rotate-35"></div>
       </div>
 
       {/* Contenido: por encima del canvas */}
