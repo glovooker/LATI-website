@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-
 export default function Footer () {
     return (
         <footer className="footer footer-center p-10 bg-neutral text-neutral-content">
@@ -10,7 +9,7 @@ export default function Footer () {
                 <Link to="#team" className="link link-hover">Team</Link>
                 <Link to="#contact" className="link link-hover">Contact</Link>
             </div>
-            <div>
+            {/*<div>
                 <div className="grid grid-flow-col gap-4">
                     <a href="#" className="btn btn-circle btn-ghost">
                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -35,7 +34,7 @@ export default function Footer () {
                     <p>University Campus</p>
                     <p>Building A, Room 101</p>
                 </div>
-            </div>
+            </div>*/}
             <div>
                 <p>&copy; 2024 LATI Lab. All rights reserved.</p>
             </div>
