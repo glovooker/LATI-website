@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Mesh, BufferGeometry } from 'three'
+import { Mesh, BufferGeometry, MathUtils } from 'three'
 
 type AnimationType = 'bobbing' | 'rotate' | 'spin'
 
@@ -18,6 +18,16 @@ interface ThreeObjectProps {
   receiveShadow?: boolean
   animations?: AnimationType[]
 }
+
+/** Constantes de animación — suaves y lentas */
+const ROTATE_SPEED = 0.003
+const SPIN_SPEED = { x: 0.007, y: 0.007, z: 0.007 }
+
+const BOB_FREQ = 1.0      // antes 2 → más lento
+const BOB_AMPL = 0.12     // antes 0.2 → más sutil
+
+const HOVER_SENS = 0.03   // antes 0.06 → menos sensible
+const HOVER_SMOOTH = 6.0  // factor de amortiguación para damp (más alto = más suave)
 
 const ThreeObject: React.FC<ThreeObjectProps> = ({
   geometry,
@@ -37,36 +47,41 @@ const ThreeObject: React.FC<ThreeObjectProps> = ({
   const hovered = useRef(false)
   const extraSpeed = useRef({ x: 0, y: 0 }) // velocidad extra por hover
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     const t = state.clock.getElapsedTime()
     const mesh = meshRef.current
     if (!mesh) return
 
-    // 1) Animaciones base
+    // 1) Animaciones base (independientes del framerate)
     let dx = 0, dy = 0, dz = 0
-    if (animations.includes('rotate')) dy += 0.01
-    if (animations.includes('spin')) { dx += 0.01; dy += 0.01; dz += 0.005 }
+
+    if (animations.includes('rotate')) dy += ROTATE_SPEED
+    if (animations.includes('spin')) {
+      dx += SPIN_SPEED.x
+      dy += SPIN_SPEED.y
+      dz += SPIN_SPEED.z
+    }
 
     if (animations.includes('bobbing')) {
-      const bob = Math.sin(t * 2) * 0.2
+      const bob = Math.sin(t * BOB_FREQ) * BOB_AMPL
       mesh.position.y = position[1] + bob
     }
 
-    // 2) Componente de hover (usa state.pointer normalizado [-1..1])
-    const targetX = hovered.current ? -state.pointer.y * 0.06 : 0 // invertir Y para sensación natural
-    const targetY = hovered.current ?  state.pointer.x * 0.06 : 0
+    // 2) Componente de hover (puntero normalizado [-1..1])
+    const targetX = hovered.current ? -state.pointer.y * HOVER_SENS : 0 // invertir Y para sensación natural
+    const targetY = hovered.current ?  state.pointer.x * HOVER_SENS : 0
 
-    // LERP suave hacia el objetivo
-    extraSpeed.current.x += (targetX - extraSpeed.current.x) * 0.15
-    extraSpeed.current.y += (targetY - extraSpeed.current.y) * 0.15
+    // Suavizado exponencial estable con delta (frame-rate independent)
+    extraSpeed.current.x = MathUtils.damp(extraSpeed.current.x, targetX, HOVER_SMOOTH, delta)
+    extraSpeed.current.y = MathUtils.damp(extraSpeed.current.y, targetY, HOVER_SMOOTH, delta)
 
     dx += extraSpeed.current.x
     dy += extraSpeed.current.y
 
-    // 3) Aplicar rotación acumulada
-    mesh.rotation.x += dx
-    mesh.rotation.y += dy
-    mesh.rotation.z += dz
+    // 3) Aplicar rotación acumulada (escala por delta para suavizar en monitores rápidos)
+    mesh.rotation.x += dx * delta * 60
+    mesh.rotation.y += dy * delta * 60
+    mesh.rotation.z += dz * delta * 60
   })
 
   return (
