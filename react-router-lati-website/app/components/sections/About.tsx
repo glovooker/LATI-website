@@ -39,14 +39,7 @@ export default function About() {
             {/* Left Column - Text */}
             <div className="space-y-6">
               <p className="text-lg text-gray-600 leading-relaxed">
-                We explore new ways for people to interact with technology through Extended Reality (XR), <strong>Artificial Intelligence (AI)</strong>, and emerging tools. Our goal is to create immersive, inclusive, and meaningful experiences that transform how we learn, work, and connect.
-              </p>
-
-              <h3 className="text-2xl font-semibold mt-8 text-gray-900">
-                About SpatialLab
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We are a research lab dedicated to exploring the frontiers of immersive technology and human–computer interaction, combining cutting-edge research with real-world impact.
+                We explore new ways for people to interact with technology through <strong>Extended Reality (XR)</strong>, <strong>Artificial Intelligence (AI)</strong>, and emerging technologies. Our goal is to create intelligent, immersive, and inclusive experiences that transform how we learn, work, and connect.
               </p>
 
               <h3 className="text-2xl font-semibold mt-8 text-gray-900">
@@ -64,7 +57,7 @@ export default function About() {
               </p>
 
               {/* Key Areas */}
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <h4 className="text-xl font-semibold mb-4 text-gray-900">Research Areas</h4>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
@@ -84,7 +77,7 @@ export default function About() {
                     <span className="text-gray-700">Emerging Technologies</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Right Column - Image */}

@@ -7,8 +7,7 @@ export default function Header() {
       <div className="w-full max-w-screen-xl mx-auto px-4 flex items-center h-full">
         <div className="navbar-start">
           <Link to="/" className="btn btn-ghost text-xl font-bold">
-            <span className="text-gray-900">LATI </span>
-            <span className="text-[#006AEA]">Lab</span>
+            <span className="text-[#006AEA]">SpatialLab</span>
           </Link>
         </div>
 

@@ -36,7 +36,7 @@ export default function Research({ researchLines }: ResearchProps) {
               <span className="text-[#006AEA]">Lines</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our cutting-edge research areas in AR/VR and interactive experiences
+              Explore our cutting-edge research areas
             </p>
           </div>
 
@@ -61,11 +61,11 @@ export default function Research({ researchLines }: ResearchProps) {
                   <p className="text-gray-600 leading-relaxed mb-4">
                     {item.description}
                   </p>
-                  <div className="flex justify-start">
+                  {/* <div className="flex justify-start">
                     <div className="badge bg-gradient-to-r from-[#006AEA] to-[#0A2E6E] text-white border-0 px-4 py-2 rounded-full">
                       Research Area
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}

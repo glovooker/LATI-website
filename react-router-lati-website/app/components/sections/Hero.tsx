@@ -156,8 +156,8 @@ export default function Hero() {
           <span className="text-[#006AEA]">SpatialLab</span>
         </h1>
         <p className="text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto lg:mx-0">
-          Where research and immersive experiences{" "}
-          <span className="text-[#006AEA] font-semibold">collide!</span>
+          Where interaction, immersion and intelligence {" "}
+          <span className="text-[#006AEA] font-semibold">converge.</span>
         </p>
       </div>
 

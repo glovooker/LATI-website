@@ -11,7 +11,7 @@ export default function Footer () {
   </div>
 
   <div>
-    <p>&copy; 2024 LATI Lab. All rights reserved.</p>
+    <p>&copy; 2024 SpatialLab All rights reserved.</p>
   </div>
 </footer>
 

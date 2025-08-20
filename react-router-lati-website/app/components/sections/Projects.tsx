@@ -36,7 +36,7 @@ export default function Projects({ projects }: ProjectsProps) {
               <span className="text-[#006AEA]">Projects</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our innovative projects that showcase the potential of AR/VR and interactive technologies
+              Discover our innovative projects that showcase the potential of XR and Artificial Intelligence
             </p>
           </div>
 
