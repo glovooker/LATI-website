@@ -40,9 +40,7 @@ export function checkIfIsMobile(breakpointPx: number = 1023) {
 export default function Hero() {
   const isMobile = checkIfIsMobile();
   return (
-    <section className="min-h-screen relative isolate overflow-hidden bg-white">
-      {/* Gradiente: detrás y sin bloquear el mouse */}
-      <div className="absolute inset-0 bg-gradient-to-bl from-sky-300/60 via-sky-200/40 via-sky-100/20 to-white pointer-events-none z-0" />
+    <section className="min-h-screen relative isolate overflow-hidden bg-transparent">
 
       {/* Canvas: detrás del contenido pero interactivo */}
       <div className="absolute inset-0 z-10">

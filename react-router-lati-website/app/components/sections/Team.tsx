@@ -6,9 +6,7 @@ interface TeamProps {
 
 export default function Team({ teamMembers }: TeamProps) {
   return (
-    <section id="team" className="py-20 bg-white relative isolate overflow-hidden">
-      {/* Gradiente celeste en esquina superior derecha */}
-      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-sky-300/60 via-sky-200/40 via-sky-100/20 to-white"></div>
+    <section id="team" className="py-20 bg-transparent relative isolate overflow-hidden">
       
       {/* Líneas del fondo */}
       <div className="absolute inset-0 opacity-30 pointer-events-none z-0">

@@ -1,8 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-white relative isolate overflow-hidden">
-      {/* Gradiente celeste en esquina superior derecha */}
-      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-sky-300/60 via-sky-200/40 via-sky-100/20 to-white"></div>
+    <section id="about" className="py-20 bg-transparent relative isolate overflow-hidden">
       
       {/* Líneas del fondo */}
       <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
@@ -29,7 +27,7 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-gray-900">About </span>
-              <span className="text-[#006AEA]">HumanLab</span>
+              <span className="text-[#006AEA]">SpatialLab</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Where Humans and Technology Meet the Future
@@ -45,7 +43,7 @@ export default function About() {
               </p>
 
               <h3 className="text-2xl font-semibold mt-8 text-gray-900">
-                About HumanLab
+                About SpatialLab
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
                 We are a research lab dedicated to exploring the frontiers of immersive technology and human–computer interaction, combining cutting-edge research with real-world impact.
@@ -89,19 +87,13 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right Column - Visual */}
+            {/* Right Column - Image */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-[#006AEA]/10 to-[#0A2E6E]/10 rounded-2xl shadow-2xl p-8 border border-[#006AEA]/20">
-                <div className="text-center h-80 flex flex-col justify-center items-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#006AEA] to-[#0A2E6E] rounded-full flex items-center justify-center shadow-lg mb-6">
-                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h4 className="text-xl font-semibold mb-2 text-gray-900">HumanLab</h4>
-                  <p className="text-gray-600">Where humans and technology meet the future</p>
-                </div>
-              </div>
+                              <img 
+                  src="/images/lab-photo.png" 
+                  alt="SpatialLab" 
+                  className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+                />
             </div>
           </div>
         </div>

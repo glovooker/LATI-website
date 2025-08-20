@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'LATI Website',
+  title: 'SpatialLab Website',
 
   projectId: 'gulqkrg1',
   dataset: 'production',

@@ -1,8 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-white relative isolate overflow-hidden">
-      {/* Gradiente celeste en esquina superior derecha */}
-      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-sky-300/60 via-sky-200/40 via-sky-100/20 to-white"></div>
+    <section id="contact" className="py-20 bg-transparent relative isolate overflow-hidden">
       
       {/* Líneas del fondo */}
       <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
@@ -118,7 +116,7 @@ export default function Contact() {
                     <input
                       type="text"
                       name="name"
-                      className="input input-bordered mt-2 border-blue-200 focus:border-[#006AEA] focus:ring-[#006AEA]/20"
+                      className="input input-bordered w-full mt-2 border-blue-200 focus:border-[#006AEA] focus:ring-[#006AEA]/20"
                       placeholder="Your name"
                     />
                   </div>
@@ -130,7 +128,7 @@ export default function Contact() {
                     <input
                       type="email"
                       name="email"
-                      className="input input-bordered mt-2 border-blue-200 focus:border-[#006AEA] focus:ring-[#006AEA]/20"
+                      className="input input-bordered w-full mt-2 border-blue-200 focus:border-[#006AEA] focus:ring-[#006AEA]/20"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -139,7 +137,7 @@ export default function Contact() {
                     <label className="label">
                       <span className="label-text font-semibold text-gray-700">Subject</span>
                     </label>
-                    <select className="select select-bordered mt-2 border-blue-200 focus:border-[#006AEA] focus:ring-[#006AEA]/20">
+                    <select className="select select-bordered w-full mt-2 border-blue-200 focus:border-[#006AEA] focus:ring-[#006AEA]/20">
                       <option value="">Select a subject</option>
                       <option value="collaboration">Research Collaboration</option>
                       <option value="visit">Lab Visit</option>
@@ -154,7 +152,7 @@ export default function Contact() {
                     <textarea
                       name="message"
                       rows={4}
-                      className="textarea textarea-bordered mt-2 border-blue-200 focus:border-[#006AEA] focus:ring-[#006AEA]/20"
+                      className="textarea textarea-bordered w-full mt-2 border-blue-200 focus:border-[#006AEA] focus:ring-[#006AEA]/20"
                       placeholder="Tell us about your inquiry..."
                     ></textarea>
                   </div>
