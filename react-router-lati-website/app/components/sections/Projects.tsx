@@ -61,14 +61,14 @@ export default function Projects({ projects }: ProjectsProps) {
                   <p className="text-gray-600 leading-relaxed mb-4">
                     {item.description}
                   </p>
-                  <div className="flex justify-between items-center">
+                  {/* <div className="flex justify-between items-center">
                     <div className="badge bg-gradient-to-r from-[#006AEA] to-[#0A2E6E] text-white border-0 px-4 py-2 rounded-full">
                       AR/VR Project
                     </div>
                     <button className="btn btn-ghost btn-sm text-[#006AEA] hover:bg-[#006AEA]/10 transition-colors duration-300">
                       Learn More →
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
