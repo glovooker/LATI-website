@@ -6,9 +6,25 @@ export default function Header() {
       {/* Wrapper centrado */}
       <div className="w-full max-w-screen-xl mx-auto px-4 flex items-center h-full">
         <div className="navbar-start">
-          <Link to="/" className="btn btn-ghost text-xl font-bold">
-            <span className="text-[#006AEA]">SpatialLab</span>
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link to="/" className="text-xl font-bold">
+              <span className="text-[#006AEA]">SpatialLab</span>
+            </Link>
+            <span className="text-gray-400 hidden sm:inline">·</span>
+            <span className="text-gray-400 text-xs hidden lg:inline">R&D Lab at</span>
+            <a 
+              href="https://ucenfotec.ac.cr/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
+              <img 
+                src="/images/cenfotec-gradient.png" 
+                alt="CENFOTEC" 
+                className="h-7 w-auto"
+              />
+            </a>
+          </div>
         </div>
 
         <div className="navbar-center hidden lg:flex">

@@ -39,7 +39,7 @@ export default function About() {
             {/* Left Column - Text */}
             <div className="space-y-6">
               <p className="text-lg text-gray-600 leading-relaxed">
-                <strong>Spatial Lab</strong> is a Research &amp; Development Lab of CENFOTEC University in Costa Rica. We explore new ways for people to interact with technology through <strong>Extended Reality (XR)</strong>, <strong>Artificial Intelligence (AI)</strong>, and emerging technologies.
+                <strong>Spatial Lab</strong> is a Research &amp; Development Lab at <strong>CENFOTEC</strong> University in Costa Rica. We explore new ways for people to interact with technology through <strong>Extended Reality (XR)</strong>, <strong>Artificial Intelligence (AI)</strong>, and emerging technologies.
               </p>
 
               <h3 className="text-2xl font-semibold mt-8 text-gray-900">
