@@ -1,6 +1,7 @@
 import type { SanityDocument } from "@sanity/client";
 import { client } from "~/sanity/client";
 import type { Route } from "./+types/home";
+import { Meta } from "react-router";
 
 
 // Import components
@@ -26,6 +27,19 @@ export async function loader() {
   
   return { researchLines, projects, teamMembers };
 }
+
+export const meta: Route.MetaFunction = () => [
+  { title: "SpatialLab - R&D Lab at CENFOTEC | XR, AI & Emerging Technologies" },
+  { name: "description", content: "SpatialLab is a Research & Development Lab at CENFOTEC University in Costa Rica. We explore Extended Reality (XR), Artificial Intelligence (AI), and emerging technologies for human-computer interaction." },
+  { name: "keywords", content: "SpatialLab, CENFOTEC, XR, Virtual Reality, Augmented Reality, Artificial Intelligence, Research Lab, Costa Rica, Emerging Technologies" },
+  { property: "og:title", content: "SpatialLab - R&D Lab at CENFOTEC" },
+  { property: "og:description", content: "Research & Development Lab exploring XR, AI & emerging technologies at CENFOTEC University in Costa Rica." },
+  { property: "og:type", content: "website" },
+  { property: "og:url", content: "https://spatiallab.ucenfotec.ac.cr" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "SpatialLab - R&D Lab at CENFOTEC" },
+  { name: "twitter:description", content: "Research & Development Lab exploring XR, AI & emerging technologies at CENFOTEC University in Costa Rica." }
+];
 
 export default function IndexPage({ loaderData }: Route.ComponentProps) {
   const { researchLines, projects, teamMembers } = loaderData;
